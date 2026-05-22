@@ -179,13 +179,9 @@ amazon-sales-eda/
 ## 📈 Future Improvements
 
 - [ ] 🤖 Build a **price prediction model** using regression (e.g., Linear Regression, XGBoost)
-- [ ] 🏷️ Deep-dive into **sub-category analysis** using hierarchical category parsing
 
-- [ ] 📊 Build an interactive **dashboard** using Plotly Dash or Streamlit
-- [ ] 🔄 Automate data ingestion from Amazon's Product Advertising API
-- [ ] 🗓️ Add **time-series analysis** if historical pricing data becomes available
 
----
+
 
 ## 🤝 Contributing
 
