@@ -247,15 +247,7 @@ The notebook produces the following charts:
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! To contribute:
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/your-analysis`
-3. Commit your changes: `git commit -m 'Add: sentiment word cloud'`
-4. Push to the branch: `git push origin feature/your-analysis`
-5. Open a Pull Request
 
 ---
 
