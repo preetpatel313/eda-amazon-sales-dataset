@@ -1,142 +1,179 @@
-# eda-amazon-sales-dataset
-# Amazon Sales Dataset EDA  Exploratory Data Analysis project using Python, Pandas, Matplotlib, and Seaborn.
-# 📦 Amazon Sales — Exploratory Data Analysis
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge&logo=jupyter&logoColor=white"/>
+# 🛒 Amazon Sales — Exploratory Data Analysis
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-Numerical-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
   <img src="https://img.shields.io/badge/Seaborn-Visualization-4C72B0?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/TextBlob-NLP-blueviolet?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge"/>
 </p>
+
+<p>
+  <strong>A full end-to-end Exploratory Data Analysis on 1,465 Amazon India product listings —<br/>
+  uncovering pricing patterns, discount behaviour, customer ratings, and NLP-based review sentiment.</strong>
+</p>
+
+[📓 View Notebook](./sales.ipynb) · [🌐 View Presentation](https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui) · [📊 Dataset on Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
+
+</div>
 
 ---
 
 ## 📌 Project Overview
 
-This project performs a comprehensive **Exploratory Data Analysis (EDA)** on an Amazon Sales Dataset sourced from Kaggle. The goal is to uncover meaningful patterns in pricing, discounts, customer ratings, and product categories — providing actionable insights into how Amazon's product ecosystem is structured and how customers respond to it.
+This project performs a comprehensive **Exploratory Data Analysis (EDA)** on a real-world Amazon India sales dataset sourced from Kaggle. Raw data was cleaned, transformed, and interrogated across **10 research questions** — covering price distributions, discount strategies, rating patterns, category performance, and TextBlob sentiment classification on customer reviews.
 
-The dataset contains **1,465 rows** and **16 columns**, covering product metadata, pricing, discount information, ratings, and customer reviews from Amazon India (amazon.in).
+The dataset contains **1,465 products** and **16 features** from Amazon India (`amazon.in`), spanning electronics, accessories, computers, and more.
 
 ---
 
 ## 🎯 Objectives
 
-- 🔍 Understand the structure and quality of the Amazon sales dataset
-- 🧹 Clean and preprocess raw data (handle currency symbols, missing values, type conversions)
-- 📊 Visualize the distribution of prices, discounts, and ratings
-- 🔗 Identify correlations between key numeric variables
-- 🏷️ Analyse product performance across different categories
-- 💡 Extract actionable insights that could inform business decisions
-
----
-## Project Presentation
-
-View the full project presentation here:
-
-https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui
+| # | Objective |
+|---|-----------|
+| 1 | 🔍 Profile the dataset — structure, dtypes, missing values, duplicates |
+| 2 | 🧹 Clean and preprocess raw data (currency symbols, corrupt values, type conversions) |
+| 3 | 💰 Analyse price distributions and the relationship between actual vs. discounted prices |
+| 4 | ⭐ Investigate how ratings relate to price, discount, and review count |
+| 5 | 🔗 Build a correlation heatmap across all key numeric features |
+| 6 | 🏷️ Rank product categories by average customer rating |
+| 7 | 💬 Classify customer reviews as Positive / Negative / Neutral using TextBlob NLP |
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Tool | Purpose |
-|---|---|
-| 🐍 Python 3.10+ | Core programming language |
-| 📓 Jupyter Notebook | Interactive development environment |
-| 🐼 Pandas | Data manipulation and analysis |
-| 🔢 NumPy | Numerical computations |
-| 📈 Matplotlib | Static data visualizations |
-| 🎨 Seaborn | Statistical data visualizations |
+| Tool | Version | Purpose |
+|------|---------|---------|
+| 🐍 Python | 3.10+ | Core language |
+| 📓 Jupyter Notebook | Latest | Interactive development environment |
+| 🐼 Pandas | 2.x | Data loading, cleaning & manipulation |
+| 🔢 NumPy | 1.26+ | Numerical computations |
+| 📈 Matplotlib | 3.x | Static charts and visualizations |
+| 🎨 Seaborn | 0.13+ | Statistical plots and heatmaps |
+| 💬 TextBlob | 0.18+ | NLP-based sentiment analysis |
 
 ---
 
 ## 📁 Dataset Information
 
 | Attribute | Details |
-|---|---|
-| **Source** | Kaggle — Amazon Sales Dataset |
+|-----------|---------|
+| **Source** | [Kaggle — Amazon Sales Dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset) |
 | **File** | `archive/amazon.csv` |
 | **Rows** | 1,465 products |
 | **Columns** | 16 features |
-| **Data Types** | Mixed (object → cleaned to float/category) |
+| **Region** | Amazon India (₹ INR pricing) |
+| **Data Types** | Mixed — cleaned to `float64`, `int64`, and `category` |
 
 ### 📋 Key Columns
 
-| Column | Description |
-|---|---|
-| `product_id` | Unique product identifier |
-| `product_name` | Name of the product |
-| `category` | Product category hierarchy |
-| `actual_price` | Original listed price (₹) |
-| `discounted_price` | Price after discount (₹) |
-| `discount_percentage` | Percentage discount applied |
-| `rating` | Average customer rating (0–5) |
-| `rating_count` | Number of customer ratings |
-| `about_product` | Product description |
-| `review_title / review_content` | Customer reviews |
+| Column | Type | Description |
+|--------|------|-------------|
+| `product_id` | object | Unique Amazon product identifier |
+| `product_name` | object | Full product name / title |
+| `category` | object | Hierarchical category (pipe-separated levels) |
+| `actual_price` | float64 | Original MRP in ₹ (after cleaning) |
+| `discounted_price` | float64 | Sale price in ₹ (after cleaning) |
+| `discount_percentage` | float64 | Percentage discount applied |
+| `rating` | float64 | Average customer rating (0–5) |
+| `rating_count` | int64 | Number of customer ratings |
+| `about_product` | object | Product description text |
+| `review_content` | object | Full customer review text (used for NLP) |
 
 ---
 
-## 🔧 Data Cleaning Steps
+## 🔧 Data Cleaning Pipeline
 
-The raw dataset required significant preprocessing before analysis:
+The raw dataset required significant preprocessing before any analysis could begin:
 
-1. **Currency Conversion** — Stripped `₹` symbols and commas from `actual_price` and `discounted_price`, then cast to `float`
-2. **Discount Parsing** — Removed `%` from `discount_percentage` and converted to `float`
-3. **Rating Fix** — Identified a corrupt `|` rating value; replaced it with `3.9` (verified on Amazon.in)
-4. **Missing Values** — Filled missing `rating_count` values using the **median** (chosen over mean due to right-skewed distribution)
-5. **Duplicate Check** — Verified and handled any duplicate rows
-6. **Type Encoding** — Encoded categorical columns using `.cat.codes` for correlation analysis
+| Step | Issue | Fix Applied |
+|------|-------|-------------|
+| **1. Currency Formatting** | `actual_price` and `discounted_price` stored as strings with `₹` and `,` | Stripped symbols, cast to `float64` |
+| **2. Discount Parsing** | `discount_percentage` stored as `"47%"` strings | Removed `%`, cast to `float64` |
+| **3. Corrupt Rating** | One row had `rating = "\|"` (pipe character) | Replaced with `3.9` — verified manually on Amazon.in |
+| **4. Missing Values** | `rating_count` had null entries | Filled with **median** (chosen over mean due to right-skewed distribution) |
+| **5. Duplicate Check** | Potential duplicate product rows | Verified and removed duplicates |
+| **6. Type Encoding** | Categorical columns needed numeric form for correlation | Applied `.cat.codes` encoding |
+| **7. Safe Copy** | Avoid mutating the original DataFrame | Created `copydf` as a deep copy for all transformations |
 
 ---
 
 ## 📊 Analysis & Visualizations
 
 ### 1. 💰 Price Distribution
-A histogram of `actual_price` reveals the distribution is **highly right-skewed** — the vast majority of products are priced in the lower range, while a small number of premium products push the tail rightward.
+A histogram of `actual_price` reveals the distribution is **highly right-skewed** — the vast majority of products sit in the budget range (₹100–₹500), while a small number of premium products create a long right tail.
 
-### 2. ⚡ Actual Price vs. Rating (Scatter Plot)
-A scatter plot on a log-scale x-axis shows that products across all price ranges receive similarly distributed ratings — there is **no strong linear relationship** between price and customer satisfaction.
+### 2. ⚡ Actual Price vs. Rating (Scatter Plot — Log Scale)
+Plotting price on a log-scale x-axis against rating shows that products across **all price points receive similarly distributed ratings** — there is no meaningful linear relationship between price and customer satisfaction.
 
 ### 3. 🔥 Correlation Heatmap
 A Seaborn heatmap across `discounted_price`, `actual_price`, `discount_percentage`, `rating`, and `rating_count` reveals:
-- **Very strong positive correlation (0.96)** between `actual_price` and `discounted_price`
-- **Weak negative relationship** between `discount_percentage` and prices
-- **Negligible correlation** between ratings and pricing variables
+- **r = 0.96** — near-perfect positive correlation between `actual_price` and `discounted_price`
+- **Weak negative** relationship between `discount_percentage` and prices
+- **Negligible correlation** between `rating` and any pricing variable
 
-### 4. 🏷️ Category-wise Rating Analysis
-Products are grouped by category, and the mean rating per category is computed to identify which product segments consistently earn higher or lower customer satisfaction.
+### 4. 📉 Missing Value Profile
+A bar chart of null counts per column confirms that `rating_count` was the **only column with meaningful missing data**, keeping the dataset largely complete.
 
-### 5. 📉 Missing Value Analysis
-A bar chart visualises the count of null values per column, confirming that `rating_count` was the only column with meaningful missing data.
+### 5. 🏷️ Category-wise Rating Analysis
+Products are grouped by top-level category and the mean rating per group is computed. **Top 5 highest-rated categories:**
+
+| Rank | Category | Avg. Rating |
+|------|----------|-------------|
+| 🥇 1 | Tablets | 4.6 ★ |
+| 🥈 2 | Network Adapters (LAN) | 4.5 ★ |
+| 🥈 2 | Camera Accessories (Film) | 4.5 ★ |
+| 🥈 2 | Memory Components | 4.5 ★ |
+| 🥈 2 | Streaming Devices | 4.5 ★ |
+
+### 6. 💬 Sentiment Analysis (TextBlob NLP)
+TextBlob polarity scores classify each of the 1,465 reviews:
+
+| Sentiment | Count | Share |
+|-----------|-------|-------|
+| 😊 Positive | 1,438 | 98.2% |
+| 😞 Negative | 26 | 1.8% |
+| 😐 Neutral | 1 | < 0.1% |
 
 ---
 
 ## 💡 Key Insights
 
-> **1.** 🛒 Most Amazon products are budget-friendly — the price distribution is heavily skewed toward lower price points, with very few luxury/premium listings.
+> 💡 **Insight 1 — Budget-First Market**
+> Most Amazon India products are priced in the ₹100–₹500 range. The price distribution is heavily right-skewed, reflecting a price-sensitive consumer base.
 
-> **2.** 🔗 Actual price and discounted price move almost in lockstep (r = 0.96), suggesting that higher-priced products receive proportionally similar discounts.
+> 💡 **Insight 2 — Prices Move Together (r = 0.96)**
+> Actual price and discounted price are almost perfectly correlated — higher-priced products receive proportionally similar absolute discounts, not deeper percentage cuts.
 
-> **3.** ⭐ Customer ratings are largely independent of price — buyers rate cheap and expensive products with similar satisfaction levels.
+> 💡 **Insight 3 — Rating is Price-Independent**
+> Customer ratings are largely independent of price. Buyers rate cheap and expensive products with similar satisfaction — quality perception does not scale with cost on this platform.
 
-> **4.** 📉 Higher discount percentages are not strongly associated with higher ratings — discounting alone may not be driving purchase satisfaction.
+> 💡 **Insight 4 — Discounts Don't Drive Satisfaction**
+> Higher discount percentages show no strong correlation with higher ratings — discounting alone does not appear to improve perceived product quality.
 
-> **5.** 🏷️ Category plays a significant role in determining average ratings, pointing to category-specific customer expectations.
+> 💡 **Insight 5 — Category is the Strongest Rating Predictor**
+> Category plays the most significant role in determining average ratings, pointing to category-specific customer expectations and product standards.
+
+> 💡 **Insight 6 — Overwhelmingly Positive Sentiment**
+> 98.2% of reviews carried positive sentiment — a powerful trust signal reflecting strong overall satisfaction with Amazon India's product ecosystem.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-Make sure you have Python 3.10+ installed and the required libraries.
+- Python 3.10 or higher
+- `pip` package manager
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/amazon-sales-eda.git
+git clone https://github.com/your-username/amazon-sales-eda.git
 cd amazon-sales-eda
 ```
 
@@ -149,22 +186,24 @@ pip install -r requirements.txt
 Or install manually:
 
 ```bash
-pip install pandas numpy matplotlib seaborn jupyter
+pip install pandas numpy matplotlib seaborn jupyter textblob
 ```
 
 ### 3. Add the Dataset
 
-Download the Amazon Sales Dataset from [Kaggle](https://www.kaggle.com/) and place it at:
+Download `amazon.csv` from [Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset) and place it at:
 
 ```
 archive/amazon.csv
 ```
 
-### 4. Run the Notebook
+### 4. Launch the Notebook
 
 ```bash
 jupyter notebook sales.ipynb
 ```
+
+Then run all cells: **Kernel → Restart & Run All**
 
 ---
 
@@ -173,49 +212,74 @@ jupyter notebook sales.ipynb
 ```
 amazon-sales-eda/
 │
-├── archive/
-│   └── amazon.csv          # Raw dataset (download from Kaggle)
-│
-├── sales.ipynb             # Main EDA notebook
-├── requirements.txt        # Python dependencies
-└── README.md               # Project documentation
+├── 📓 sales.ipynb             # Main EDA notebook (all analysis + visualizations)
+├── 📂 archive/
+│   └── amazon.csv             # Raw dataset (download from Kaggle)
+├── 📄 requirements.txt        # Python dependencies
+└── 📄 README.md               # Project documentation
 ```
 
 ---
 
-## 📈 Future Improvements
+## 📈 Sample Visualizations
 
-- [ ] 🤖 Build a **price prediction model** using regression (e.g., Linear Regression, XGBoost)
+The notebook produces the following charts:
 
+| # | Chart Type | What It Shows |
+|---|-----------|---------------|
+| 1 | 📊 Bar chart | Missing value count per column |
+| 2 | 📉 Histogram | Distribution of actual & discounted prices |
+| 3 | 🔵 Scatter plot (log scale) | Actual price vs. customer rating |
+| 4 | 🟥 Correlation heatmap | Relationships between all numeric features |
+| 5 | 📦 Horizontal bar | Top categories by average rating |
+| 6 | 🥧 Bar chart | Sentiment breakdown (Positive / Negative / Neutral) |
 
+---
 
+## 🔭 Future Improvements
+
+- [ ] 🤖 **Price Prediction Model** — Linear Regression / XGBoost on product features
+- [ ] 🌐 **Interactive Dashboard** — Plotly or Dash for dynamic exploration
+- [ ] 🔤 **Word Cloud** — Most frequent terms across positive vs. negative reviews
+- [ ] 📅 **Time-Series Analysis** — Price and rating trends over time (if date column added)
+- [ ] 🏷️ **Sub-category Deep Dive** — Drill into the full hierarchical category tree
+- [ ] 🧪 **A/B Simulation** — Discount threshold vs. rating impact analysis
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+Contributions are welcome! To contribute:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/new-analysis`)
-3. Commit your changes (`git commit -m 'Add sentiment analysis'`)
-4. Push to the branch (`git push origin feature/new-analysis`)
+2. Create your feature branch: `git checkout -b feature/your-analysis`
+3. Commit your changes: `git commit -m 'Add: sentiment word cloud'`
+4. Push to the branch: `git push origin feature/your-analysis`
 5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgements
 
-- Dataset sourced from [Kaggle — Amazon Sales Dataset](https://www.kaggle.com/)
-- Inspired by the open-source data science community
-- Built with ❤️ using Python and Jupyter Notebook
+- Dataset by [Karkavelraja J on Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
+- Built with ❤️ using Python, Jupyter, and the open-source data science ecosystem
 
 ---
 
-<p align="center">
-  ⭐ If you found this project helpful, please consider giving it a star!
-</p>
+<div align="center">
+
+**👤 Author**
+
+**Your Name** · [📧 Email](mailto:your.email@example.com) · [🔗 LinkedIn](https://linkedin.com/in/your-profile) · [💻 GitHub](https://github.com/your-username)
+
+---
+
+⭐ **If this project helped you, please give it a star — it means a lot!** ⭐
+
+</div>
