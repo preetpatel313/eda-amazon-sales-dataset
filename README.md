@@ -269,7 +269,10 @@ https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x
 
 ## 🙏 Acknowledgements
 
-- Dataset by [Karkavelraja J on Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
+- Dataset by 
+* Kaggle Amazon Sales Dataset EDA:
+  https://www.kaggle.com/code/mehakiftikhar/amazon-sales-dataset-eda
+
 - Built with ❤️ using Python, Jupyter, and the open-source data science ecosystem
 
 ---
