@@ -17,7 +17,7 @@
   uncovering pricing patterns, discount behaviour, customer ratings, and NLP-based review sentiment.</strong>
 </p>
 
-[📓 View Notebook](./sales.ipynb) · [🌐 View Presentation](https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui) · [📊 Dataset on Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
+[📓 View Notebook](./sales.ipynb) · [🌐 View Presentation](https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui) · [📊 Dataset on Kaggle](https://www.kaggle.com/code/mehakiftikhar/amazon-sales-dataset-eda)
 
 </div>
 
