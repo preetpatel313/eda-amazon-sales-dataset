@@ -265,6 +265,16 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
+
+---
+### Project Presentation
+
+View the full project presentation here:
+
+https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui
+
+---
+
 ## 🙏 Acknowledgements
 
 - Dataset by [Karkavelraja J on Kaggle](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
@@ -276,7 +286,9 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **👤 Author**
 
-**Your Name** · [📧 Email](mailto:your.email@example.com) · [🔗 LinkedIn](https://linkedin.com/in/your-profile) · [💻 GitHub](https://github.com/your-username)
+**Preet Patel** · [📧 Email](preet313313@gmail.com) · [🔗 LinkedIn](https://www.linkedin.com/in/preet-patel-109559348
+) · [💻 GitHub](https://github.com/preetpatel313
+)
 
 ---
 
