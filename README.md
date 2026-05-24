@@ -281,9 +281,8 @@ https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x
 
 **👤 Author**
 
-**Preet Patel** · [📧 Email](preet313313@gmail.com) · [🔗 LinkedIn](https://www.linkedin.com/in/preet-patel-109559348
-) · [💻 GitHub](https://github.com/preetpatel313
-)
+**Preet Patel** · 📧 Email: [preet313313@gmail.com](mailto:preet313313@gmail.com) · 🔗 LinkedIn: https://www.linkedin.com/in/preet-patel-109559348 · 💻 GitHub: https://github.com/preetpatel313
+
 
 ---
 
