@@ -30,6 +30,13 @@ The dataset contains **1,465 rows** and **16 columns**, covering product metadat
 - 💡 Extract actionable insights that could inform business decisions
 
 ---
+## Project Presentation
+
+View the full project presentation here:
+
+https://gamma.app/docs/Amazon-India-Sales-Exploratory-Data-Analysis-cngxvwl95u9x8ui
+
+---
 
 ## 🛠️ Technologies Used
 
